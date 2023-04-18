@@ -1,5 +1,12 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ejemplo-child',
@@ -9,12 +16,26 @@ import { Router } from '@angular/router';
 export class EjemploChildComponent implements OnInit, OnDestroy {
   // @Input() namePokemon = '';
   @Input() namePokemon: string | undefined = '';
-  constructor(private router: Router) {}
+  @Output() onChangePokemon: EventEmitter<number | string> = new EventEmitter<
+    number | string
+  >();
+
+  // formGroupPokemon: FormGroup = new FormGroup({
+  //   idpokemon: new FormControl('')
+  // })
+  formGroupPokemon: FormGroup = this.fb.group({
+    idpokemon: this.fb.control(['']),
+  });
+  get idpokemon(): FormControl {
+    return this.formGroupPokemon.get('idpokemon') as FormControl;
+  }
+  constructor(private fb: FormBuilder) {}
   ngOnDestroy(): void {
     console.log('ejemplo-child se ha destruido');
   }
-  goToOtherComponent() {
-    this.router.navigate(['ejemplo/ejemplo-child2']);
+  changePokemon() {
+    // this.onChangePokemon.emit(this.formGroupPokemon.controls['idpokemon'].value);
+    this.onChangePokemon.emit(this.idpokemon.value);
   }
 
   ngOnInit(): void {}
