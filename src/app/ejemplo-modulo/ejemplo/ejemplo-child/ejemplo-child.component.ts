@@ -38,5 +38,9 @@ export class EjemploChildComponent implements OnInit, OnDestroy {
     this.onChangePokemon.emit(this.idpokemon.value);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.idpokemon.valueChanges.subscribe((changeStr) => {
+    //   console.log(changeStr);
+    // });
+  }
 }
