@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'ejemplo',
+    redirectTo: 'pokemons',
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'pokemons',
+    loadChildren: () =>
+      import('./pokemon/pokemon.module').then((mod) => mod.PokemonModule),
   },
   {
     path: 'ejemplo',
