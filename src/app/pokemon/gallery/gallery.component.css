@@ -1,0 +1,26 @@
+.my-pokemon-content{
+  margin: 16px;
+  display: grid;
+  grid-template-columns: 1fr  1fr 1fr  1fr ;
+}
+.pokemon-cart {
+  border: 1px yellow solid;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  margin-right: 24px;
+  cursor: pointer;
+  align-items: center;
+}
+.pokemon-cart figure {
+  margin: 0;
+}
+.pokemon-cart figure img {
+  width: 120px;
+  height: 100px;
+  border-radius: 20px;
+  object-fit: cover;
+}

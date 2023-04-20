@@ -1,0 +1,19 @@
+<div class="dialog-container">
+  <div class="header-dialog">
+    <h2 mat-dialog-title>Capture a {{currentPokemon.name ? currentPokemon.name : 'sin pokemon'}} !! </h2>
+    <img
+      id="pokeball"
+      (click)="addFavoritePokemon(currentPokemon)"
+      width="50"
+      src="https://ph-files.imgix.net/2e52ec5b-0e53-4f6e-af4d-85651439e832.png?auto=format"
+      alt="pokeball_img"
+    />
+  </div>
+  <div class="body-dialog">
+    <figure>
+      <!-- <img width="300" [src]="currentPokemon.sprites.front_default" alt="bike" /> -->
+    </figure>
+    <div class="container">asdfasdf</div>
+    <!-- <img width="350" src="https://i.pinimg.com/originals/9c/c5/34/9cc53484ef3d0440cff42e2ef7ed1f33.jpg" alt=""> -->
+  </div>
+</div>
