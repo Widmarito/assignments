@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { RootObject } from '../../ejemplo-modulo/ejemplo/model';
-import { ReactiveService } from '../../shared/reactive.service';
+import { ReactiveService } from 'src/app/shared/reactive/reactive.service';
+
 
 @Component({
   selector: 'app-reactive',
@@ -24,7 +25,6 @@ export class ReactiveComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((infoPokemon) => {
         this.infoPokemon = infoPokemon;
-        console.log(infoPokemon);
       });
   }
 }

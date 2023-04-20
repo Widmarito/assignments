@@ -31,7 +31,6 @@ export class EjemploChildComponent implements OnInit, OnDestroy {
   }
   constructor(private fb: FormBuilder) {}
   ngOnDestroy(): void {
-    console.log('ejemplo-child se ha destruido');
   }
   changePokemon() {
     // this.onChangePokemon.emit(this.formGroupPokemon.controls['idpokemon'].value);

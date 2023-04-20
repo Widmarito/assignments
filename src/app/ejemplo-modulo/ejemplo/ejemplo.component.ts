@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ReactiveService } from '../../shared/reactive.service';
 import { RootObject } from './model';
+import { ReactiveService } from 'src/app/shared/reactive/reactive.service';
 
 @Component({
   selector: 'app-ejemplo',
@@ -20,8 +20,6 @@ export class EjemploComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<RootObject>(`${this.baseUrl}ditto`).subscribe((response) => {
       this.objectPokemon = response;
-      // this.reactiveService.setInfoPokemon(this.objectPokemon);
-      console.log(this.objectPokemon);
     });
   }
   hideReactive() {
@@ -33,7 +31,6 @@ export class EjemploComponent implements OnInit {
       next: (response) => {
         this.objectPokemon = response;
         this.reactiveService.setInfoPokemon(this.objectPokemon);
-        console.log(this.objectPokemon);
       },
       error: (err) => {
         this.objectPokemon = undefined;
