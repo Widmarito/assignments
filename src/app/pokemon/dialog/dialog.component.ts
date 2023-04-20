@@ -19,13 +19,14 @@ export class DialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.pokemonService.getCurrentPokemon().subscribe((res) => {
-      this.currentPokemon = res;
-    });
-    console.log(this.currentPokemon);
+    // this.pokemonService.getCurrentPokemon().subscribe((res) => {
+    //   this.currentPokemon = res;
+    // });
+    // console.log(this.currentPokemon);
     // this.pokemonService.getFavoritesPokemon().subscribe((res) => {
     //   this.listPokemon = res;
     // });
+    this.currentPokemon = this.data;
   }
 
   addFavoritePokemon(currentPokemon: IDataPokemon) {

@@ -43,5 +43,6 @@ export class PokemonService {
   setFavoritesPokemon(listObj: IDataPokemon) {
     this.favoritesPokemonData.push(listObj);
     this.favoritesPokemon.next(this.favoritesPokemonData);
+    console.log(this.favoritesPokemonData);
   }
 }

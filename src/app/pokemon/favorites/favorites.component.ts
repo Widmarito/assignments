@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/shared/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-favorites',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private pokemonService: PokemonService,
+  ) { }
 
   ngOnInit(): void {
+    this.pokemonService.getFavoritesPokemon().subscribe((res) => {
+      console.log(res);
+    });
   }
 
 }
