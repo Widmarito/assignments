@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IResGetPokemons, ISimplePokemon } from '../models/getPokemons.models';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { IDataPokemon } from '../models/getPokemon.models';
 
 @Injectable({
@@ -10,7 +8,9 @@ import { IDataPokemon } from '../models/getPokemon.models';
 export class PokemonService {
   private pokemonList: Subject<IDataPokemon[]> = new Subject<IDataPokemon[]>();
   private currentPokemon: Subject<IDataPokemon> = new Subject<IDataPokemon>();
-  private favoritesPokemon: Subject<IDataPokemon[]> = new Subject<IDataPokemon[]>();
+  private favoritesPokemonData: IDataPokemon[] = [];
+  private favoritesPokemon: BehaviorSubject<IDataPokemon[]> =
+    new BehaviorSubject<IDataPokemon[]>(this.favoritesPokemonData);
 
   constructor() {}
 
@@ -23,7 +23,6 @@ export class PokemonService {
     this.pokemonList.next(listObj);
   }
 
-
   // -- Current Pokemon getter and setter
 
   getCurrentPokemon() {
@@ -32,7 +31,7 @@ export class PokemonService {
 
   setCurrentPokemon(obj: IDataPokemon) {
     this.currentPokemon.next(obj);
-    console.log(`the current pokemon is ${this.currentPokemon.subscribe()}`)
+    console.log(`the current pokemon is ${this.currentPokemon.subscribe()}`);
   }
 
   // -- Favorites Pokemon getter and setter
@@ -41,8 +40,8 @@ export class PokemonService {
     return this.favoritesPokemon.asObservable();
   }
 
-  setFavoritesPokemon(listObj: IDataPokemon[]) {
-    this.favoritesPokemon.next(listObj);
+  setFavoritesPokemon(listObj: IDataPokemon) {
+    this.favoritesPokemonData.push(listObj);
+    this.favoritesPokemon.next(this.favoritesPokemonData);
   }
-
 }
