@@ -1,11 +1,11 @@
 .my-pokemon-content{
   margin: 16px;
   display: grid;
-  grid-template-columns: 1fr  1fr 1fr  1fr ;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 .pokemon-cart {
-  border: 1px yellow solid;
-  background-color: #f5f5f5;
+  border: 1px #fcca23 solid;
+  background-color: #fbecd6;
   border-radius: 15px;
   display: grid;
   grid-template-columns: auto 1fr auto auto;

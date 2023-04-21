@@ -19,14 +19,24 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     // get the route path of navigator
-    this.pokemonService.getPokemonsList().subscribe((res) => {
-      this.pokemonList = res;
-    });
-    const path = window.location.pathname;
-    if (path === '/pokemons/favorites') {
-      this.pokemonService.getFavoritesPokemon().subscribe((res) => {
-        this.pokemonList = res;
-      });
+    switch (window.location.pathname) {
+      case '/pokemons/gallery':
+        this.pokemonService.getPokemonsList().subscribe((res) => {
+          this.pokemonList = res;
+        });
+        break;
+      case '/pokemons/favorites':
+        this.pokemonService.getFavoritesPokemon().subscribe((res) => {
+          this.pokemonList = res;
+        });
+        break;
+      case '/pokemons/searcher':
+        this.pokemonService.getMatchedPokemonList().subscribe((res) => {
+          this.pokemonList = res;
+        });
+        break;
+      default:
+        break;
     }
   }
 

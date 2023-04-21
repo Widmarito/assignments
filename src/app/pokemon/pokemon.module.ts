@@ -8,7 +8,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { SearcherComponent } from './searcher/searcher.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,13 +17,15 @@ import {MatDialogModule} from '@angular/material/dialog';
     GalleryComponent,
     HomeComponent,
     FavoritesComponent,
-    DialogComponent
+    DialogComponent,
+    SearcherComponent
   ],
   imports: [
     CommonModule,
     PokemonRoutingModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ]
 })
 export class PokemonModule { }

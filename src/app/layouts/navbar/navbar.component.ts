@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/shared/pokemon/pokemon.service';
 
 @Component({
   selector: 'navbar-layout',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  pokemonListLength: number = 0;
+
+  constructor(
+    private pokemonService: PokemonService,
+  ) { }
 
   ngOnInit(): void {
+    this.pokemonService.getFavoritesPokemon().subscribe((res) => {
+      this.pokemonListLength = res.length;
+    });
   }
 
 }

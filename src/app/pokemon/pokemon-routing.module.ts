@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { SearcherComponent } from './searcher/searcher.component';
 
 const routes: Routes = [
   {
@@ -14,16 +15,13 @@ const routes: Routes = [
     path: 'gallery',
     component: HomeComponent,
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: () =>
-  //     import('./gallery/gallery.module')
-  //     .then((mod) => mod.GalleryModule),
-
-  // },
   {
     path: 'favorites',
     component: FavoritesComponent,
+  },
+  {
+    path: 'searcher',
+    component: SearcherComponent,
   },
 ];
 

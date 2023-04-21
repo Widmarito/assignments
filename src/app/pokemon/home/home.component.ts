@@ -11,7 +11,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home-component',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
