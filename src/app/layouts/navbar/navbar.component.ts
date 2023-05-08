@@ -8,16 +8,9 @@ import { PokemonService } from 'src/app/shared/pokemon/pokemon.service';
 })
 export class NavbarComponent implements OnInit {
 
-  pokemonListLength: number = 0;
-
   constructor(
-    private pokemonService: PokemonService,
   ) { }
 
-  ngOnInit(): void {
-    this.pokemonService.getFavoritesPokemon().subscribe((res) => {
-      this.pokemonListLength = res.length;
-    });
-  }
+  ngOnInit(): void {}
 
 }
