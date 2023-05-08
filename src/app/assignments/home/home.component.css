@@ -1,0 +1,27 @@
+.title{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 24px;
+}
+
+.body{
+  margin-top: 36px;
+}
+
+input{
+  margin-left: 24px;
+}
+
+.btn-load{
+  color: black;
+  margin-left: 690px;
+  background-color: wheat;
+}
+.data-principal{
+  margin-top: 24px;
+  text-decoration: none;
+  margin-left: 24px;
+}

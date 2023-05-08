@@ -16,7 +16,7 @@ nav {
 .navbar-right ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-right: 12px;
   display: flex;
   align-items: center;
   height: 60px;
@@ -32,9 +32,10 @@ nav {
   text-decoration: none;
   color: black;
   border: 1px solid var(--white);
-  padding: 8px;
+  padding: 16px;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 16px;
 }
 .navbar-left ul li a:hover,
 .navbar-right ul li a:hover {
@@ -55,41 +56,7 @@ nav {
   height: 35px;
   width: 35px;
 }
-.navbar-shopping-cart div {
-  width: 16px;
-  height: 16px;
-  background-color: var(--hospital-green);
-  border-radius: 50%;
-  font-size: var(--sm);
-  font-weight: bold;
-  position: absolute;
-  top: -4px;
-  right: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.my-pokemon-content{
-  margin-top: 32px;
-}
-
-.pokemon-cart {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: 16px;
-  margin-bottom: 24px;
-  align-items: center;
-}
-.pokemon-cart figure {
-  margin: 0;
-}
-.pokemon-cart figure img {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  object-fit: cover;
-}
 /* footer {
   background-color: white ;
   padding: 10px;

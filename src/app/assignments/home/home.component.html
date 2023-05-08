@@ -1,13 +1,33 @@
-<h1>Home</h1>
+<div class="title">File Upload</div>
+<p><em>Carga el archivo xls para poder obtener la informacion y poder utilizarla</em></p>
 
-<h3>Carga el archivo xls para poder obtener la informacion y poder utilizarla</h3>
+<div class="body">
+  <input  type="file" (change)="ReadExcel($event)">
+  <button class="btn-load" (click)="loadData()">Load all data</button>
+  <div class="data-principal">
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Alumno</th>
+          <th scope="col">NombreAlumno</th>
+          <th scope="col">Nombrecurso</th>
+          <th scope="col">Docente</th>
+          <th scope="col">NombreDocente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of excelData; index as i" >
+          <td>{{i+1}} </td>
+          <td>{{row.Alumno}} </td>
+          <td>{{row.NombreAlumno}} </td>
+          <td>{{row.Nombrecurso}}</td>
+          <td>{{row.Docente}}</td>
+          <td>{{row.NombreDocente}}</td>
+        </tr>
 
-<input type="file" (change)="ReadExcel($event)">
+      </tbody>
+    </table>
+  </div>
 
-<button (click)="loadData()">Load all data</button>
-
-<ul *ngFor="let row of excelData">
-    <li>
-        {{row.NombreAlumno}}
-    </li>
-</ul>
+</div>
