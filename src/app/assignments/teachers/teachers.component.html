@@ -2,6 +2,19 @@
 
 <div>
     <ul *ngFor="let teacher of teachers!">
-        <li>{{teacher.name}}</li>
+        <li>{{teacher.code}} - {{teacher.name}}</li>
     </ul>
 </div>
+
+<!-- <div>
+  <ul *ngFor="let teacher of teachers!">
+    <li>
+      {{ teacher.name }}
+      <ul *ngFor="let student of teacher.assignedStudents; index as i">
+        <li>
+          <strong>{{ i + 1 }}:</strong> {{ student.code }} - {{ student.name }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div> -->

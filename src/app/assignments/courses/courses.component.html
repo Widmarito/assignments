@@ -1,8 +1,14 @@
 <p>courses works!</p>
 
-
 <div>
-    <ul *ngFor="let course of courses!">
-        <li>{{course.name}}</li>
-    </ul>
+  <ul *ngFor="let course of courses!">
+    <li>
+      {{ course.name }}
+      <ul *ngFor="let student of course.assignedStudents">
+        <li>
+          {{ student.name }}
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>

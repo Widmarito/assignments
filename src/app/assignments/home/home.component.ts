@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
         teachers.push({
           code: row.Docente,
           name: row.NombreDocente,
+          assignedStudents: []
         });
       }
       students.push({
@@ -56,6 +57,7 @@ export class HomeComponent implements OnInit {
       courses.push({
         code: row.codigocurso,
         name: row.Nombrecurso,
+        assignedStudents: []
       });
     }
 
@@ -78,6 +80,8 @@ export class HomeComponent implements OnInit {
   }
 
   loadData() {
+    this.assignmentsService.setExcelData(this.excelData);    
     this.separateData(this.excelData);
+    this.assignmentsService.setRelations();
   }
 }

@@ -1,1 +1,29 @@
 <p>assignments works!</p>
+
+<p>Alumnos no asignados <strong>{{unassignedStudents.length}}</strong></p>
+
+
+<p>Agregar lista de alumnos no asignados a docentes con menos de 15 estudiantes</p>
+<button (click)="addUnassignedStudents()">Agregar</button>
+
+<div *ngFor="let teacher of teachers!">
+    <h2>{{ teacher.name }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Code</th>
+          <th>Student Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of teacher.assignedStudents; index as i">
+          <td>
+            <strong>{{ i + 1 }}</strong>
+          </td>
+          <td>{{ student.code }}</td>
+          <td>{{ student.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
