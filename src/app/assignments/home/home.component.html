@@ -1,0 +1,13 @@
+<h1>Home</h1>
+
+<h3>Carga el archivo xls para poder obtener la informacion y poder utilizarla</h3>
+
+<input type="file" (change)="ReadExcel($event)">
+
+<button (click)="loadData()">Load all data</button>
+
+<ul *ngFor="let row of excelData">
+    <li>
+        {{row.NombreAlumno}}
+    </li>
+</ul>
