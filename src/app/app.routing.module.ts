@@ -8,21 +8,9 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'pokemons',
-    loadChildren: () =>
-      import('./pokemon/pokemon.module').then((mod) => mod.PokemonModule),
-  },
-  {
     path: 'assignments',
     loadChildren: () =>
       import('./assignments/assignments.module').then((mod) => mod.AssignmentsModule),
-  },
-  {
-    path: 'ejemplo',
-    loadChildren: () =>
-      import('./ejemplo-modulo/ejemplo-modulo.module').then(
-        (mod) => mod.EjemploModuloModule
-      ),
   },
 ];
 
